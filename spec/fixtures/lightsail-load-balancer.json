@@ -1,0 +1,35 @@
+{
+  "loadBalancers": [
+    {
+      "arn": "arn:aws:lightsail:us-east-1:154967844790:LoadBalancer/542e0d8d-e57a-4bea-8132-53a8b0cd0de4",
+      "configurationOptions": {
+        "SessionStickinessEnabled": "false",
+        "SessionStickiness_LB_CookieDurationSeconds": "86400"
+      },
+      "createdAt": 1526182918.935,
+      "dnsName": "ce551c6f952085b4126e4b523a100eda-232829524.us-east-1.elb.amazonaws.com",
+      "healthCheckPath": "/",
+      "instanceHealthSummary": [
+        {
+          "instanceHealth": "initial",
+          "instanceHealthReason": "Lb.RegistrationInProgress",
+          "instanceName": "Amazon_Linux-512MB-Virginia-1"
+        }
+      ],
+      "instancePort": 80,
+      "location": {
+        "availabilityZone": "all",
+        "regionName": "us-east-1"
+      },
+      "name": "LoadBalancer-Virginia-1",
+      "protocol": "HTTP",
+      "publicPorts": [
+        80
+      ],
+      "resourceType": "LoadBalancer",
+      "state": "provisioning",
+      "supportCode": "083651072206/arn:aws:elasticloadbalancing:us-east-1:083651072206:loadbalancer/app/ce551c6f952085b4126e4b523a100eda/727fb77509ebef09",
+      "tlsCertificateSummaries": []
+    }
+  ]
+}

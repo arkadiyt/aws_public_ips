@@ -1,0 +1,30 @@
+{
+  "item": [
+    {
+      "apiKeySource": "HEADER",
+      "createdDate": 1526178732,
+      "description": "Your first API with Amazon API Gateway. This is a sample API that integrates via HTTP with our demo Pet Store endpoints",
+      "endpointConfiguration": {
+        "ipv6": false,
+        "types": [
+          "EDGE"
+        ]
+      },
+      "id": "e83d6nij2j",
+      "name": "PetStore"
+    },
+    {
+      "apiKeySource": "HEADER",
+      "createdDate": 1526178701,
+      "description": "Your first API with Amazon API Gateway. This is a sample API that integrates via HTTP with our demo Pet Store endpoints",
+      "endpointConfiguration": {
+        "ipv6": false,
+        "types": [
+          "REGIONAL"
+        ]
+      },
+      "id": "tmtmok31nc",
+      "name": "PetStore"
+    }
+  ]
+}

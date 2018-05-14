@@ -1,0 +1,46 @@
+{
+  "DomainStatus": {
+    "ARN": "arn:aws:es:us-east-1:154967844790:domain/classic",
+    "AccessPolicies": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Action\":\"es:*\",\"Resource\":\"arn:aws:es:us-east-1:154967844790:domain/classic/*\"}]}",
+    "AdvancedOptions": {
+      "rest.action.multi.allow_explicit_index": "true"
+    },
+    "CognitoOptions": {
+      "Enabled": false,
+      "IdentityPoolId": null,
+      "RoleArn": null,
+      "UserPoolId": null
+    },
+    "Created": true,
+    "Deleted": false,
+    "DomainId": "154967844790/classic",
+    "DomainName": "classic",
+    "EBSOptions": {
+      "EBSEnabled": true,
+      "Iops": null,
+      "VolumeSize": 10,
+      "VolumeType": "gp2"
+    },
+    "ElasticsearchClusterConfig": {
+      "DedicatedMasterCount": 3,
+      "DedicatedMasterEnabled": true,
+      "DedicatedMasterType": "m4.large.elasticsearch",
+      "InstanceCount": 1,
+      "InstanceType": "m4.large.elasticsearch",
+      "ZoneAwarenessEnabled": false
+    },
+    "ElasticsearchVersion": "6.2",
+    "EncryptionAtRestOptions": {
+      "Enabled": false,
+      "KmsKeyId": null
+    },
+    "Endpoint": "search-classic-fd5cbkkjuuiudho2lrwmsjp6rm.us-east-1.es.amazonaws.com",
+    "Endpoints": null,
+    "LogPublishingOptions": null,
+    "Processing": false,
+    "SnapshotOptions": {
+      "AutomatedSnapshotStartHour": 0
+    },
+    "VPCOptions": null
+  }
+}
