@@ -1,0 +1,59 @@
+{
+  "DomainStatus": {
+    "ARN": "arn:aws:es:us-east-1:154967844790:domain/vpc",
+    "AccessPolicies": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Action\":\"es:*\",\"Resource\":\"arn:aws:es:us-east-1:154967844790:domain/vpc/*\"}]}",
+    "AdvancedOptions": {
+      "rest.action.multi.allow_explicit_index": "true"
+    },
+    "CognitoOptions": {
+      "Enabled": false,
+      "IdentityPoolId": null,
+      "RoleArn": null,
+      "UserPoolId": null
+    },
+    "Created": true,
+    "Deleted": false,
+    "DomainId": "154967844790/vpc",
+    "DomainName": "vpc",
+    "EBSOptions": {
+      "EBSEnabled": true,
+      "Iops": null,
+      "VolumeSize": 10,
+      "VolumeType": "gp2"
+    },
+    "ElasticsearchClusterConfig": {
+      "DedicatedMasterCount": null,
+      "DedicatedMasterEnabled": false,
+      "DedicatedMasterType": null,
+      "InstanceCount": 1,
+      "InstanceType": "m4.large.elasticsearch",
+      "ZoneAwarenessEnabled": false
+    },
+    "ElasticsearchVersion": "6.2",
+    "EncryptionAtRestOptions": {
+      "Enabled": false,
+      "KmsKeyId": null
+    },
+    "Endpoint": null,
+    "Endpoints": {
+      "vpc": "vpc-vpc-ncoseatahpr5ywmjpukt4xra5q.us-east-1.es.amazonaws.com"
+    },
+    "LogPublishingOptions": null,
+    "Processing": false,
+    "SnapshotOptions": {
+      "AutomatedSnapshotStartHour": 0
+    },
+    "VPCOptions": {
+      "AvailabilityZones": [
+        "us-east-1f"
+      ],
+      "SecurityGroupIds": [
+        "sg-f2ce17ba"
+      ],
+      "SubnetIds": [
+        "subnet-f4be30fb"
+      ],
+      "VPCId": "vpc-23a48958"
+    }
+  }
+}

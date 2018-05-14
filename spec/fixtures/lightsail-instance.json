@@ -1,0 +1,67 @@
+{
+  "instances": [
+    {
+      "arn": "arn:aws:lightsail:us-east-1:154967844790:Instance/4854f8f4-8572-43d1-aa45-c76f1df66f8d",
+      "blueprintId": "amazon_linux_2017_09_1_2",
+      "blueprintName": "Amazon Linux",
+      "bundleId": "nano_1_0",
+      "createdAt": 1526182910.872,
+      "hardware": {
+        "cpuCount": 1,
+        "disks": [
+          {
+            "attachedTo": "Amazon_Linux-512MB-Virginia-1",
+            "attachmentState": "attached",
+            "createdAt": 1526182910.872,
+            "iops": 100,
+            "isSystemDisk": true,
+            "path": "/dev/xvda",
+            "sizeInGb": 20
+          }
+        ],
+        "ramSizeInGb": 0.5
+      },
+      "isStaticIp": false,
+      "location": {
+        "availabilityZone": "us-east-1a",
+        "regionName": "us-east-1"
+      },
+      "name": "Amazon_Linux-512MB-Virginia-1",
+      "networking": {
+        "monthlyTransfer": {
+          "gbPerMonthAllocated": 1024
+        },
+        "ports": [
+          {
+            "accessDirection": "inbound",
+            "accessFrom": "Anywhere (0.0.0.0/0)",
+            "accessType": "public",
+            "commonName": "",
+            "fromPort": 80,
+            "protocol": "tcp",
+            "toPort": 80
+          },
+          {
+            "accessDirection": "inbound",
+            "accessFrom": "Anywhere (0.0.0.0/0)",
+            "accessType": "public",
+            "commonName": "",
+            "fromPort": 22,
+            "protocol": "tcp",
+            "toPort": 22
+          }
+        ]
+      },
+      "privateIpAddress": "172.26.4.200",
+      "publicIpAddress": "18.206.153.10",
+      "resourceType": "Instance",
+      "sshKeyName": "LightsailDefaultKeyPair",
+      "state": {
+        "code": 16,
+        "name": "running"
+      },
+      "supportCode": "083651072206/i-019d2da9fda7e1bbf",
+      "username": "ec2-user"
+    }
+  ]
+}
