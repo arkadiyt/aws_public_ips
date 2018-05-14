@@ -1,0 +1,13 @@
+language: ruby
+dist: trusty
+rvm:
+  - ruby-2.1
+  - ruby-2.2
+  - ruby-2.3
+  - ruby-2.4
+  - ruby-2.5
+  - ruby-head
+script:
+  - bundle exec bundler-audit
+  - bundle exec rubocop
+  - bundle exec rspec

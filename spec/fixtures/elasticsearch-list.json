@@ -1,0 +1,10 @@
+{
+  "DomainNames": [
+    {
+      "DomainName": "classic"
+    },
+    {
+      "DomainName": "vpc"
+    }
+  ]
+}
