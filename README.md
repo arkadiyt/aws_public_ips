@@ -26,7 +26,7 @@ It can be used as a library and as a CLI, and supports the following AWS service
 - RDS
 - Redshift
 
-If a service isn't listed (S3, ElastiCache, etc) it's most like because it doesn't have anything to support (i.e. it might not be deployable publicly, it might have all ip addresses resolve to global AWS infrastructure, etc).
+If a service isn't listed (S3, ElastiCache, etc) it's most likely because it doesn't have anything to support (i.e. it might not be deployable publicly, it might have all ip addresses resolve to global AWS infrastructure, etc).
 
 ### Quick start
 
