@@ -14,6 +14,8 @@ Gem::Specification.new do |gem|
   gem.homepage    = 'https://github.com/arkadiyt/aws_public_ips'
   gem.license     = 'MIT'
   gem.files       = Dir['lib/**/*.rb'] + Dir['bin/*']
+  gem.bindir      = 'bin'
+  gem.executables = 'aws_public_ips'
 
   gem.add_dependency('aws-sdk-apigateway', '~> 1.10.0')
   gem.add_dependency('aws-sdk-cloudfront', '~> 1.2.0')

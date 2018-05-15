@@ -16,6 +16,9 @@ Layout/SpaceInsideHashLiteralBraces:
 Metrics/AbcSize:
   Enabled: false
 
+Metrics/BlockLength:
+  Enabled: false
+
 Metrics/LineLength:
   Max: 120
 
