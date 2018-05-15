@@ -1,3 +1,6 @@
+### 1.0.2 (05/15/2018)
+* Don't depend on bundler being installed
+
 ### 1.0.1 (05/15/2018)
 * Fix a bug where the gem was not installing an executable CLI script
 
