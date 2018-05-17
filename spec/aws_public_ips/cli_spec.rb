@@ -14,6 +14,13 @@ describe AwsPublicIps::CLI do
     expect { subject.parse(%w[--service blah]) }.to raise_error(ArgumentError, /Invalid service/)
   end
 
+  it 'should select the right directory' do
+    Dir.chdir('/') do
+      options = subject.parse(%w[--service ec2 --format prettyjson])
+      expect(options).to include(services: %w[ec2], format: 'prettyjson')
+    end
+  end
+
   it 'should run' do
     expect(AwsPublicIps::Checks::Ec2).to receive(:run).and_return([{
       id: 'i-0f22d0af796b3cf3a',
