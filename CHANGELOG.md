@@ -1,3 +1,6 @@
+### 1.0.3 (05/17/2017)
+* Fix bug in relative file loading/checking
+
 ### 1.0.2 (05/15/2018)
 * Don't depend on bundler being installed
 
