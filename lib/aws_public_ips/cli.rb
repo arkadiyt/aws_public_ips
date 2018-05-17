@@ -39,11 +39,11 @@ module AwsPublicIps
     # AWS Neptune (still in preview / not GA yet)
 
     def all_services
-      @all_services ||= Dir['lib/aws_public_ips/checks/*.rb'].map { |path| File.basename(path, '.rb') }.sort
+      @all_services ||= Dir["#{__dir__}/checks/*.rb"].map { |path| File.basename(path, '.rb') }.sort
     end
 
     def all_formats
-      @all_formats ||= Dir['lib/aws_public_ips/formatters/*.rb'].map { |path| File.basename(path, '.rb') }.sort
+      @all_formats ||= Dir["#{__dir__}/formatters/*.rb"].map { |path| File.basename(path, '.rb') }.sort
     end
 
     def parse(args)
