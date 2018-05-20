@@ -9,8 +9,8 @@ module AwsPublicIps
       def self.run
         client = ::Aws::ElasticsearchService::Client.new
 
-        # ElasticSearch instances can be launched publicly or into VPCs. Public instances have a
-        # `domain_status.endpoint` hostname and VPC instances have a `domain_status.endpoints['vpc']` hostname.
+        # ElasticSearch instances can be launched into classic into VPCs. Classic instances are public and have a
+        # `domain_status.endpoint` hostname, and VPC instances have a `domain_status.endpoints['vpc']` hostname.
         # However VPC ElasticSearch instances create their own Network Interface and AWS will not allow you
         # to associate an Elastic IP to it. As a result VPC ElasticSearch instances are always private, even with an
         # internet gateway.
