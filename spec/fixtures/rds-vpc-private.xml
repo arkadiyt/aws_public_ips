@@ -10,12 +10,12 @@
             <ParameterApplyStatus>in-sync</ParameterApplyStatus>
           </DBParameterGroup>
         </DBParameterGroups>
-        <AvailabilityZone>us-east-1a</AvailabilityZone>
+        <AvailabilityZone>us-east-1b</AvailabilityZone>
         <DBSecurityGroups/>
         <EngineVersion>5.6.10a</EngineVersion>
         <MasterUsername>admin</MasterUsername>
-        <InstanceCreateTime>2018-05-13T03:59:21.324Z</InstanceCreateTime>
-        <DBInstanceClass>db.t2.small</DBInstanceClass>
+        <InstanceCreateTime>2018-05-21T00:28:01.133Z</InstanceCreateTime>
+        <DBInstanceClass>db.r4.large</DBInstanceClass>
         <ReadReplicaDBInstanceIdentifiers/>
         <MonitoringInterval>0</MonitoringInterval>
         <DBInstanceStatus>available</DBInstanceStatus>
@@ -27,59 +27,59 @@
             <Status>in-sync</Status>
           </OptionGroupMembership>
         </OptionGroupMemberships>
-        <DBClusterIdentifier>public-vpc-cluster</DBClusterIdentifier>
+        <DBClusterIdentifier>vpc-private-cluster</DBClusterIdentifier>
         <CACertificateIdentifier>rds-ca-2015</CACertificateIdentifier>
         <DbInstancePort>0</DbInstancePort>
-        <DbiResourceId>db-2PJZVWW2J4CRFH5FNEOE2TL7EA</DbiResourceId>
-        <PreferredBackupWindow>04:59-05:29</PreferredBackupWindow>
-        <DBInstanceArn>arn:aws:rds:us-east-1:154967844790:db:public-vpc</DBInstanceArn>
-        <DBInstanceIdentifier>public-vpc</DBInstanceIdentifier>
+        <DbiResourceId>db-QDHUSATZNYTKZ5AWV4JEPVZLZE</DbiResourceId>
+        <PreferredBackupWindow>04:46-05:16</PreferredBackupWindow>
+        <DBInstanceArn>arn:aws:rds:us-east-1:154967844790:db:vpc-private</DBInstanceArn>
+        <DBInstanceIdentifier>vpc-private</DBInstanceIdentifier>
         <Endpoint>
           <HostedZoneId>Z2R2ITUGPM61AM</HostedZoneId>
-          <Address>public-vpc.cyvjlokb0o75.us-east-1.rds.amazonaws.com</Address>
+          <Address>vpc-private.cyvjlokb0o75.us-east-1.rds.amazonaws.com</Address>
           <Port>3306</Port>
         </Endpoint>
         <Engine>aurora</Engine>
-        <PubliclyAccessible>true</PubliclyAccessible>
+        <PubliclyAccessible>false</PubliclyAccessible>
         <IAMDatabaseAuthenticationEnabled>false</IAMDatabaseAuthenticationEnabled>
         <PerformanceInsightsEnabled>false</PerformanceInsightsEnabled>
         <MultiAZ>false</MultiAZ>
         <DomainMemberships/>
         <StorageEncrypted>false</StorageEncrypted>
         <DBSubnetGroup>
-          <VpcId>vpc-23a48958</VpcId>
+          <VpcId>vpc-4c89a437</VpcId>
           <Subnets>
             <Subnet>
-              <SubnetIdentifier>subnet-b61fecea</SubnetIdentifier>
+              <SubnetIdentifier>subnet-20f80a7c</SubnetIdentifier>
               <SubnetStatus>Active</SubnetStatus>
               <SubnetAvailabilityZone>
                 <Name>us-east-1a</Name>
               </SubnetAvailabilityZone>
             </Subnet>
             <Subnet>
-              <SubnetIdentifier>subnet-f4be30fb</SubnetIdentifier>
+              <SubnetIdentifier>subnet-1e3cf179</SubnetIdentifier>
               <SubnetStatus>Active</SubnetStatus>
               <SubnetAvailabilityZone>
-                <Name>us-east-1f</Name>
+                <Name>us-east-1b</Name>
               </SubnetAvailabilityZone>
             </Subnet>
           </Subnets>
           <SubnetGroupStatus>Complete</SubnetGroupStatus>
-          <DBSubnetGroupDescription>Created from the RDS Management Console</DBSubnetGroupDescription>
-          <DBSubnetGroupName>default-vpc-23a48958</DBSubnetGroupName>
+          <DBSubnetGroupDescription>rds-subnet-group</DBSubnetGroupDescription>
+          <DBSubnetGroupName>rds-subnet-group</DBSubnetGroupName>
         </DBSubnetGroup>
         <VpcSecurityGroups>
           <VpcSecurityGroupMembership>
-            <VpcSecurityGroupId>sg-4909d001</VpcSecurityGroupId>
+            <VpcSecurityGroupId>sg-b777aeff</VpcSecurityGroupId>
             <Status>active</Status>
           </VpcSecurityGroupMembership>
         </VpcSecurityGroups>
         <LicenseModel>general-public-license</LicenseModel>
         <PendingModifiedValues/>
-        <PreferredMaintenanceWindow>sun:04:15-sun:04:45</PreferredMaintenanceWindow>
+        <PreferredMaintenanceWindow>tue:08:38-tue:09:08</PreferredMaintenanceWindow>
         <StorageType>aurora</StorageType>
         <AutoMinorVersionUpgrade>true</AutoMinorVersionUpgrade>
-        <CopyTagsToSnapshot>false</CopyTagsToSnapshot>
+        <CopyTagsToSnapshot>true</CopyTagsToSnapshot>
       </DBInstance>
       <DBInstance>
         <AllocatedStorage>1</AllocatedStorage>
@@ -89,12 +89,12 @@
             <ParameterApplyStatus>in-sync</ParameterApplyStatus>
           </DBParameterGroup>
         </DBParameterGroups>
-        <AvailabilityZone>us-east-1f</AvailabilityZone>
+        <AvailabilityZone>us-east-1a</AvailabilityZone>
         <DBSecurityGroups/>
         <EngineVersion>5.6.10a</EngineVersion>
         <MasterUsername>admin</MasterUsername>
-        <InstanceCreateTime>2018-05-13T04:01:47.823Z</InstanceCreateTime>
-        <DBInstanceClass>db.t2.small</DBInstanceClass>
+        <InstanceCreateTime>2018-05-21T00:31:54.651Z</InstanceCreateTime>
+        <DBInstanceClass>db.r4.large</DBInstanceClass>
         <ReadReplicaDBInstanceIdentifiers/>
         <MonitoringInterval>0</MonitoringInterval>
         <DBInstanceStatus>available</DBInstanceStatus>
@@ -106,63 +106,63 @@
             <Status>in-sync</Status>
           </OptionGroupMembership>
         </OptionGroupMemberships>
-        <DBClusterIdentifier>public-vpc-cluster</DBClusterIdentifier>
+        <DBClusterIdentifier>vpc-private-cluster</DBClusterIdentifier>
         <CACertificateIdentifier>rds-ca-2015</CACertificateIdentifier>
         <DbInstancePort>0</DbInstancePort>
-        <DbiResourceId>db-56FZRB5ILTQNES6QSM5C5RVP34</DbiResourceId>
-        <PreferredBackupWindow>04:59-05:29</PreferredBackupWindow>
-        <DBInstanceArn>arn:aws:rds:us-east-1:154967844790:db:public-vpc-us-east-1f</DBInstanceArn>
-        <DBInstanceIdentifier>public-vpc-us-east-1f</DBInstanceIdentifier>
+        <DbiResourceId>db-Q7KTA4DT5Q4JCBJAOVFS4HITBY</DbiResourceId>
+        <PreferredBackupWindow>04:46-05:16</PreferredBackupWindow>
+        <DBInstanceArn>arn:aws:rds:us-east-1:154967844790:db:vpc-private-us-east-1a</DBInstanceArn>
+        <DBInstanceIdentifier>vpc-private-us-east-1a</DBInstanceIdentifier>
         <Endpoint>
           <HostedZoneId>Z2R2ITUGPM61AM</HostedZoneId>
-          <Address>public-vpc-us-east-1f.cyvjlokb0o75.us-east-1.rds.amazonaws.com</Address>
+          <Address>vpc-private-us-east-1a.cyvjlokb0o75.us-east-1.rds.amazonaws.com</Address>
           <Port>3306</Port>
         </Endpoint>
         <Engine>aurora</Engine>
-        <PubliclyAccessible>true</PubliclyAccessible>
+        <PubliclyAccessible>false</PubliclyAccessible>
         <IAMDatabaseAuthenticationEnabled>false</IAMDatabaseAuthenticationEnabled>
         <PerformanceInsightsEnabled>false</PerformanceInsightsEnabled>
         <MultiAZ>false</MultiAZ>
         <DomainMemberships/>
         <StorageEncrypted>false</StorageEncrypted>
         <DBSubnetGroup>
-          <VpcId>vpc-23a48958</VpcId>
+          <VpcId>vpc-4c89a437</VpcId>
           <Subnets>
             <Subnet>
-              <SubnetIdentifier>subnet-b61fecea</SubnetIdentifier>
+              <SubnetIdentifier>subnet-20f80a7c</SubnetIdentifier>
               <SubnetStatus>Active</SubnetStatus>
               <SubnetAvailabilityZone>
                 <Name>us-east-1a</Name>
               </SubnetAvailabilityZone>
             </Subnet>
             <Subnet>
-              <SubnetIdentifier>subnet-f4be30fb</SubnetIdentifier>
+              <SubnetIdentifier>subnet-1e3cf179</SubnetIdentifier>
               <SubnetStatus>Active</SubnetStatus>
               <SubnetAvailabilityZone>
-                <Name>us-east-1f</Name>
+                <Name>us-east-1b</Name>
               </SubnetAvailabilityZone>
             </Subnet>
           </Subnets>
           <SubnetGroupStatus>Complete</SubnetGroupStatus>
-          <DBSubnetGroupDescription>Created from the RDS Management Console</DBSubnetGroupDescription>
-          <DBSubnetGroupName>default-vpc-23a48958</DBSubnetGroupName>
+          <DBSubnetGroupDescription>rds-subnet-group</DBSubnetGroupDescription>
+          <DBSubnetGroupName>rds-subnet-group</DBSubnetGroupName>
         </DBSubnetGroup>
         <VpcSecurityGroups>
           <VpcSecurityGroupMembership>
-            <VpcSecurityGroupId>sg-4909d001</VpcSecurityGroupId>
+            <VpcSecurityGroupId>sg-b777aeff</VpcSecurityGroupId>
             <Status>active</Status>
           </VpcSecurityGroupMembership>
         </VpcSecurityGroups>
         <LicenseModel>general-public-license</LicenseModel>
         <PendingModifiedValues/>
-        <PreferredMaintenanceWindow>fri:07:08-fri:07:38</PreferredMaintenanceWindow>
+        <PreferredMaintenanceWindow>thu:09:36-thu:10:06</PreferredMaintenanceWindow>
         <StorageType>aurora</StorageType>
         <AutoMinorVersionUpgrade>true</AutoMinorVersionUpgrade>
-        <CopyTagsToSnapshot>false</CopyTagsToSnapshot>
+        <CopyTagsToSnapshot>true</CopyTagsToSnapshot>
       </DBInstance>
     </DBInstances>
   </DescribeDBInstancesResult>
   <ResponseMetadata>
-    <RequestId>2edce579-bb32-44d9-b440-7e5e0ec0a43d</RequestId>
+    <RequestId>8f4ee8ee-5958-4da8-94a2-be40301c82f1</RequestId>
   </ResponseMetadata>
 </DescribeDBInstancesResponse>

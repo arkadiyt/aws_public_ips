@@ -10,6 +10,7 @@ module AwsPublicIps
         client = ::Aws::CloudFront::Client.new
 
         # Cloudfront distrubtions are always public, they don't have a concept of VPC
+        # No "coming up" problem here like with RDS/Redshift
 
         client.list_distributions.flat_map do |response|
           response.distribution_list.items.flat_map do |distribution|
