@@ -27,12 +27,24 @@ describe ::AwsPublicIps::CLI do
       hostname: 'ec2-54-234-208-236.compute-1.amazonaws.com',
       ip_addresses: %w[54.234.208.236]
     }])
+    expect(::STDOUT).to receive(:puts)
     subject.run(['-s', 'ec2'])
   end
 
   it 'should rescue exceptions' do
     expect(subject).to receive(:check_service).and_raise(::StandardError)
     expect(::Process).to receive(:exit).with(1)
+    expect(::STDERR).to receive(:puts)
     subject.run(['-s', 'ec2'])
+  end
+
+  it 'should print the version' do
+    expect(::STDOUT).to receive(:puts).with(::AwsPublicIps::VERSION)
+    subject.run(['--version'])
+  end
+
+  it 'should print help' do
+    expect(::STDOUT).to receive(:puts)
+    subject.run(['--help'])
   end
 end
