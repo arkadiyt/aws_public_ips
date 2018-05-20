@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-describe AwsPublicIps::Checks::Elb do
+describe ::AwsPublicIps::Checks::Elb do
   it 'should return elb ips' do
     stub_request(:post, 'https://elasticloadbalancing.us-east-1.amazonaws.com')
-      .to_return(body: IO.read('spec/fixtures/elb.xml'))
+      .to_return(body: ::IO.read('spec/fixtures/elb.xml'))
 
     stub_dns(
       'classic-272004174.us-east-1.elb.amazonaws.com' => %w[54.0.0.1],

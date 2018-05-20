@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe AwsPublicIps::Formatters::Text do
+describe ::AwsPublicIps::Formatters::Text do
   it 'should output the right format' do
     results = {
       ec2: {
@@ -10,6 +10,6 @@ describe AwsPublicIps::Formatters::Text do
       }
     }
 
-    expect(AwsPublicIps::Formatters::Text.new(results).format).to eq('54.234.208.236')
+    expect(::AwsPublicIps::Formatters::Text.new(results).format).to eq('54.234.208.236')
   end
 end

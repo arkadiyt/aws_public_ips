@@ -7,7 +7,7 @@ module AwsPublicIps
   module Checks
     module Rds
       def self.run
-        client = Aws::RDS::Client.new
+        client = ::Aws::RDS::Client.new
 
         # TODO(arkadiy) not sure if this is true anymore after redshift, do more testing
         # RDS instances can be:
@@ -21,7 +21,7 @@ module AwsPublicIps
             {
               id: instance.dbi_resource_id,
               hostname: instance.endpoint.address,
-              ip_addresses: Utils.resolve_hostname(instance.endpoint.address)
+              ip_addresses: ::AwsPublicIps::Utils.resolve_hostname(instance.endpoint.address)
             }
           end
         end

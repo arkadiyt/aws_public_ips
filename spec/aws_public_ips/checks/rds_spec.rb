@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-describe AwsPublicIps::Checks::Rds do
+describe ::AwsPublicIps::Checks::Rds do
   it 'should return rds ips' do
     stub_request(:post, 'https://rds.us-east-1.amazonaws.com')
-      .to_return(body: IO.read('spec/fixtures/rds.xml'))
+      .to_return(body: ::IO.read('spec/fixtures/rds.xml'))
 
     stub_dns(
       'public-vpc.cyvjlokb0o75.us-east-1.rds.amazonaws.com' => %w[35.171.145.174],

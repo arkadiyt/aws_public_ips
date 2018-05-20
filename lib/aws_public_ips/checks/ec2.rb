@@ -6,7 +6,7 @@ module AwsPublicIps
   module Checks
     module Ec2
       def self.run
-        client = Aws::EC2::Client.new
+        client = ::Aws::EC2::Client.new
 
         # TODO(arkadiy) confirm this covers Batch, Fargate
         # Iterate over all EC2 instances. This will include those from EC2, ECS, EKS, Fargate, Batch,

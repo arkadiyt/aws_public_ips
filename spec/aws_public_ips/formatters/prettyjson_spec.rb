@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe AwsPublicIps::Formatters::Prettyjson do
+describe ::AwsPublicIps::Formatters::Prettyjson do
   it 'should output the right format' do
     results = {
       ec2: {
@@ -10,6 +10,6 @@ describe AwsPublicIps::Formatters::Prettyjson do
       }
     }
 
-    expect(AwsPublicIps::Formatters::Prettyjson.new(results).format).to include('54.234.208.236')
+    expect(::AwsPublicIps::Formatters::Prettyjson.new(results).format).to include('54.234.208.236')
   end
 end

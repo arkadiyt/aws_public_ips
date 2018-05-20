@@ -7,14 +7,14 @@ module AwsPublicIps
   module Checks
     module Cloudfront
       def self.run
-        client = Aws::CloudFront::Client.new
+        client = ::Aws::CloudFront::Client.new
 
         client.list_distributions.flat_map do |response|
           response.distribution_list.items.flat_map do |distribution|
             {
               id: distribution.id,
               hostname: distribution.domain_name,
-              ip_addresses: Utils.resolve_hostname(distribution.domain_name)
+              ip_addresses: ::AwsPublicIps::Utils.resolve_hostname(distribution.domain_name)
             }
           end
         end

@@ -4,10 +4,10 @@ describe 'File requires' do
   def traverse(dir)
     results = {}
 
-    Dir["#{dir}/*"].each do |path|
-      next unless File.directory?(path)
-      next unless File.exist?("#{path}.rb")
-      results[path] = Dir["#{path}/*.rb"].map { |file| file.chomp('.rb') }
+    ::Dir["#{dir}/*"].each do |path|
+      next unless ::File.directory?(path)
+      next unless ::File.exist?("#{path}.rb")
+      results[path] = ::Dir["#{path}/*.rb"].map { |file| file.chomp('.rb') }
     end
 
     results
@@ -23,7 +23,7 @@ describe 'File requires' do
         expected_requires = files.sort.map do |file|
           "require '#{file.gsub(%r{^lib/}, '')}'"
         end.join("\n")
-        expect(IO.read("#{dir}.rb")).to include(expected_requires)
+        expect(::IO.read("#{dir}.rb")).to include(expected_requires)
       end
     end
   end

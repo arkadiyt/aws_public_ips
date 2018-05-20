@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe AwsPublicIps::Formatters::Json do
+describe ::AwsPublicIps::Formatters::Json do
   it 'should output the right format' do
     results = {
       ec2: {
@@ -10,6 +10,6 @@ describe AwsPublicIps::Formatters::Json do
       }
     }
 
-    expect(AwsPublicIps::Formatters::Json.new(results).format).to eq(results.to_json)
+    expect(::AwsPublicIps::Formatters::Json.new(results).format).to eq(results.to_json)
   end
 end

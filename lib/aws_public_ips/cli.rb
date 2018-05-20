@@ -39,11 +39,11 @@ module AwsPublicIps
     # AWS Neptune (still in preview / not GA yet)
 
     def all_services
-      @all_services ||= Dir["#{__dir__}/checks/*.rb"].map { |path| File.basename(path, '.rb') }.sort
+      @all_services ||= ::Dir["#{__dir__}/checks/*.rb"].map { |path| ::File.basename(path, '.rb') }.sort
     end
 
     def all_formats
-      @all_formats ||= Dir["#{__dir__}/formatters/*.rb"].map { |path| File.basename(path, '.rb') }.sort
+      @all_formats ||= ::Dir["#{__dir__}/formatters/*.rb"].map { |path| ::File.basename(path, '.rb') }.sort
     end
 
     def parse(args)
@@ -53,21 +53,21 @@ module AwsPublicIps
         verbose: false
       }
 
-      OptionParser.new do |opts|
+      ::OptionParser.new do |opts|
         opts.banner = 'Usage: aws_public_ips [options]'
 
         opts.on('-s', '--services <s1>,<s2>,<s3>', Array, 'List of AWS services to check. Available services: ' \
           "#{all_services.join(',')}. Defaults to all.") do |services|
           services.map(&:downcase!).uniq!
           invalid_services = services - all_services
-          raise ArgumentError, "Invalid service(s): #{invalid_services.join(',')}" unless invalid_services.empty?
+          raise ::ArgumentError, "Invalid service(s): #{invalid_services.join(',')}" unless invalid_services.empty?
           options[:services] = services
         end
 
         opts.on('-f', '--format <format>', String, 'Set output format. Available formats: ' \
           "#{all_formats.join(',')}. Defaults to text.") do |fmt|
           unless all_formats.include?(fmt)
-            raise ArgumentError, "Invalid format '#{fmt}'. Valid formats are: #{all_formats.join(',')}"
+            raise ::ArgumentError, "Invalid format '#{fmt}'. Valid formats are: #{all_formats.join(',')}"
           end
           options[:format] = fmt
         end
@@ -82,12 +82,12 @@ module AwsPublicIps
 
     def check_service(service)
       require "aws_public_ips/checks/#{service}.rb"
-      AwsPublicIps::Checks.const_get(service.capitalize).run
+      ::AwsPublicIps::Checks.const_get(service.capitalize).run
     end
 
     def output(formatter, results)
       require "aws_public_ips/formatters/#{formatter}.rb"
-      formatter_klass = AwsPublicIps::Formatters.const_get(formatter.capitalize)
+      formatter_klass = ::AwsPublicIps::Formatters.const_get(formatter.capitalize)
       output = formatter_klass.new(results).format
       puts output unless output.empty?
     end
@@ -100,10 +100,10 @@ module AwsPublicIps
       end.to_h
 
       output(options[:format], results)
-    rescue StandardError, Interrupt => ex
+    rescue ::StandardError, ::Interrupt => ex
       puts ex.inspect
       puts ex.backtrace if options[:verbose]
-      Process.exit(1)
+      ::Process.exit(1)
     end
   end
 end

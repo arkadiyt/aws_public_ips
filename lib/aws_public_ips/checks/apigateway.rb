@@ -7,7 +7,7 @@ module AwsPublicIps
   module Checks
     module Apigateway
       def self.run
-        client = Aws::APIGateway::Client.new
+        client = ::Aws::APIGateway::Client.new
 
         # TODO(arkadiy) https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-private-integration.html
 
@@ -19,7 +19,7 @@ module AwsPublicIps
             {
               id: api.id,
               hostname: hostname,
-              ip_addresses: Utils.resolve_hostname(hostname)
+              ip_addresses: ::AwsPublicIps::Utils.resolve_hostname(hostname)
             }
           end
         end

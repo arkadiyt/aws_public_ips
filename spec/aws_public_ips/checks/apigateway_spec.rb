@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-describe AwsPublicIps::Checks::Apigateway do
+describe ::AwsPublicIps::Checks::Apigateway do
   it 'should return gateway ips' do
     stub_request(:get, 'https://apigateway.us-east-1.amazonaws.com/restapis')
-      .to_return(body: IO.read('spec/fixtures/apigateway.json'))
+      .to_return(body: ::IO.read('spec/fixtures/apigateway.json'))
 
     stub_dns(
       'e83d6nij2j.execute-api.us-east-1.amazonaws.com' => %w[54.0.0.1 54.0.0.2],

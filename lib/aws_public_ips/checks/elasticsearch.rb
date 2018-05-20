@@ -7,7 +7,7 @@ module AwsPublicIps
   module Checks
     module Elasticsearch
       def self.run
-        client = Aws::ElasticsearchService::Client.new
+        client = ::Aws::ElasticsearchService::Client.new
 
         # ElasticSearch instances can be launched publicly or into VPCs. Public instances have a
         # `domain_status.endpoint` hostname and VPC instances have a `domain_status.endpoints['vpc']` hostname.
@@ -23,7 +23,7 @@ module AwsPublicIps
               {
                 id: domain.domain_status.domain_id,
                 hostname: hostname,
-                ip_addresses: Utils.resolve_hostname(hostname)
+                ip_addresses: ::AwsPublicIps::Utils.resolve_hostname(hostname)
               }
             end.compact
           end
