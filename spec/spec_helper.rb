@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 require 'coveralls'
-::Coveralls.wear!
+::Coveralls.wear! do |config|
+  # Output html report for development & default json report for Travis/Coveralls
+  config.formatter = SimpleCov::Formatter::HTMLFormatter unless ::ENV['TRAVIS']
+end
 ::ENV['COVERALLS_NOISY'] = '1'
 require 'webmock/rspec'
 require 'aws_public_ips'
