@@ -56,6 +56,8 @@ Usage: aws_public_ips [options]
     -s, --services <s1>,<s2>,<s3>    List of AWS services to check. Available services: apigateway,cloudfront,ec2,elasticsearch,elb,elbv2,lightsail,rds,redshift. Defaults to all.
     -f, --format <format>            Set output format. Available formats: json,prettyjson,text. Defaults to text.
     -v, --[no-]verbose               Enable debug/trace output
+        --version                    Print version
+    -h, --help                       Show this help message
 ```
 
 ### Configuration

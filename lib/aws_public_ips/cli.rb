@@ -53,10 +53,10 @@ module AwsPublicIps
         verbose: false
       }
 
-      ::OptionParser.new do |opts|
-        opts.banner = 'Usage: aws_public_ips [options]'
+      ::OptionParser.new do |parser|
+        parser.banner = 'Usage: aws_public_ips [options]'
 
-        opts.on('-s', '--services <s1>,<s2>,<s3>', Array, 'List of AWS services to check. Available services: ' \
+        parser.on('-s', '--services <s1>,<s2>,<s3>', Array, 'List of AWS services to check. Available services: ' \
           "#{all_services.join(',')}. Defaults to all.") do |services|
           services.map(&:downcase!).uniq!
           invalid_services = services - all_services
@@ -64,7 +64,7 @@ module AwsPublicIps
           options[:services] = services
         end
 
-        opts.on('-f', '--format <format>', String, 'Set output format. Available formats: ' \
+        parser.on('-f', '--format <format>', String, 'Set output format. Available formats: ' \
           "#{all_formats.join(',')}. Defaults to text.") do |fmt|
           unless all_formats.include?(fmt)
             raise ::ArgumentError, "Invalid format '#{fmt}'. Valid formats are: #{all_formats.join(',')}"
@@ -72,8 +72,19 @@ module AwsPublicIps
           options[:format] = fmt
         end
 
-        opts.on('-v', '--[no-]verbose', 'Enable debug/trace output') do |verbose|
+        parser.on('-v', '--[no-]verbose', 'Enable debug/trace output') do |verbose|
           options[:verbose] = verbose
+        end
+
+        parser.on_tail('--version', 'Print version') do
+          require 'aws_public_ips/version'
+          ::STDOUT.puts ::AwsPublicIps::VERSION
+          return nil  # nil to avoid rubocop warning
+        end
+
+        parser.on_tail('-h', '--help', 'Show this help message') do
+          ::STDOUT.puts parser
+          return nil  # nil to avoid rubocop warning
         end
       end.parse(args)
 
@@ -89,11 +100,12 @@ module AwsPublicIps
       require "aws_public_ips/formatters/#{formatter}.rb"
       formatter_klass = ::AwsPublicIps::Formatters.const_get(formatter.capitalize)
       output = formatter_klass.new(results).format
-      puts output unless output.empty?
+      ::STDOUT.puts output unless output.empty?
     end
 
     def run(args)
       options = parse(args)
+      return unless options
 
       results = options[:services].map do |service|
         [service.to_sym, check_service(service)]
@@ -101,8 +113,8 @@ module AwsPublicIps
 
       output(options[:format], results)
     rescue ::StandardError, ::Interrupt => ex
-      puts ex.inspect
-      puts ex.backtrace if options[:verbose]
+      ::STDERR.puts ex.inspect
+      ::STDERR.puts ex.backtrace if options[:verbose]
       ::Process.exit(1)
     end
   end
