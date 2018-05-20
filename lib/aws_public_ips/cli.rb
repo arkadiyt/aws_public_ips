@@ -114,7 +114,7 @@ module AwsPublicIps
       output(options[:format], results)
     rescue ::StandardError, ::Interrupt => ex
       ::STDERR.puts ex.inspect
-      ::STDERR.puts ex.backtrace if options[:verbose]
+      ::STDERR.puts ex.backtrace if options && options[:verbose]
       ::Process.exit(1)
     end
   end
