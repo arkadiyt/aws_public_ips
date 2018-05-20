@@ -6,7 +6,7 @@ module AwsPublicIps
   module Checks
     module Redshift
       def self.run
-        client = Aws::Redshift::Client.new
+        client = ::Aws::Redshift::Client.new
 
         # TODO(arkadiy) update copy from RDS
         # Redshift clusters can only be launched into VPCs. They can be marked as `publicly_accessible`,

@@ -10,9 +10,9 @@ module AwsPublicIps
 
     def self.resolve_hostname(hostname)
       # Default Resolv.getaddresses doesn't seem to return IPv6 results
-      resources = Resolv::DNS.open do |dns|
-        dns.getresources(hostname, Resolv::DNS::Resource::IN::A) +
-          dns.getresources(hostname, Resolv::DNS::Resource::IN::AAAA)
+      resources = ::Resolv::DNS.open do |dns|
+        dns.getresources(hostname, ::Resolv::DNS::Resource::IN::A) +
+          dns.getresources(hostname, ::Resolv::DNS::Resource::IN::AAAA)
       end
 
       resources.map do |resource|

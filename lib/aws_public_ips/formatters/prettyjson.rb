@@ -10,7 +10,7 @@ module AwsPublicIps
       end
 
       def format
-        JSON.pretty_generate(@results)
+        ::JSON.pretty_generate(@results)
       end
     end
   end

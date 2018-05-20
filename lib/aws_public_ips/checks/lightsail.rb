@@ -7,7 +7,7 @@ module AwsPublicIps
   module Checks
     module Lightsail
       def self.run
-        client = Aws::Lightsail::Client.new
+        client = ::Aws::Lightsail::Client.new
 
         # Lightsail instances are always exposed directly, and can also be put behind a load balancer
 
@@ -28,7 +28,7 @@ module AwsPublicIps
               # Names are unique
               id: load_balancer.name,
               hostname: load_balancer.dns_name,
-              ip_addresses: Utils.resolve_hostname(load_balancer.dns_name)
+              ip_addresses: ::AwsPublicIps::Utils.resolve_hostname(load_balancer.dns_name)
             }
           end
         end

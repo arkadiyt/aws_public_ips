@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-describe AwsPublicIps::Checks::Ec2 do
+describe ::AwsPublicIps::Checks::Ec2 do
   it 'should return ec2 ips' do
     stub_request(:post, 'https://ec2.us-east-1.amazonaws.com')
-      .to_return(body: IO.read('spec/fixtures/ec2.xml'))
+      .to_return(body: ::IO.read('spec/fixtures/ec2.xml'))
 
     expect(subject.run).to eq([
       {
