@@ -76,8 +76,7 @@ For authentication aws_public_ips uses the default [aws-sdk-ruby](https://github
 For more information see the AWS SDK [documentation on configuration](https://github.com/aws/aws-sdk-ruby#configuration).
 
 ### IAM permissions
-
-To find the public IPs from all AWS services, the minimal IAM policy needed is:
+To find the public IPs from all AWS services, the minimal policy needed by your IAM user is:
 ```json
 {
   "Version": "2012-10-17",
