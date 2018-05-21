@@ -1,4 +1,11 @@
-### 1.0.3 (05/17/2017)
+### 1.0.4 (05/20/2018)
+* Handle RDS and Redshift instances which are in the process of coming up/down
+* Add --help, --version commands to CLI
+* Improve CLI error output
+* Fix issue where using the EC2 check with the JSON formatter could output empty entries
+* Fix issue with RDS check where the endpoint hostname was not being counted as a public IP
+
+### 1.0.3 (05/17/2018)
 * Fix bug in relative file loading/checking
 
 ### 1.0.2 (05/15/2018)
