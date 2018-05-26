@@ -5,8 +5,9 @@ require 'json'
 module AwsPublicIps
   module Formatters
     class Json
-      def initialize(results)
+      def initialize(results, options)
         @results = results
+        @options = options
       end
 
       def format

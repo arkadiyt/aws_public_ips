@@ -96,10 +96,10 @@ module AwsPublicIps
       ::AwsPublicIps::Checks.const_get(service.capitalize).run
     end
 
-    def output(formatter, results)
+    def output(formatter, options, results)
       require "aws_public_ips/formatters/#{formatter}.rb"
       formatter_klass = ::AwsPublicIps::Formatters.const_get(formatter.capitalize)
-      output = formatter_klass.new(results).format
+      output = formatter_klass.new(results, options).format
       ::STDOUT.puts output unless output.empty?
     end
 
@@ -111,7 +111,7 @@ module AwsPublicIps
         [service.to_sym, check_service(service)]
       end.to_h
 
-      output(options[:format], results)
+      output(options[:format], options, results)
     rescue ::StandardError, ::Interrupt => ex
       ::STDERR.puts ex.inspect
       ::STDERR.puts ex.backtrace if options && options[:verbose]
