@@ -1,3 +1,6 @@
+### 1.0.5 (05/25/2018)
+* Output more details in text formatter when using --verbose
+
 ### 1.0.4 (05/20/2018)
 * Handle RDS and Redshift instances which are in the process of coming up/down
 * Add --help, --version commands to CLI
