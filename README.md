@@ -30,22 +30,20 @@ If a service isn't listed (S3, ElastiCache, etc) it's most likely because it doe
 
 ### Quick start
 
-- Install the gem and run it:
+Install the gem and run it:
 ```
 $ gem install aws_public_ips
-$ aws_public_ips  # Uses default ~/.aws/credentials
+
+# Uses default ~/.aws/credentials
+$ aws_public_ips
 52.84.11.13
 52.84.11.83
-52.84.11.159
-52.84.11.104
 2600:9000:2039:ba00:1a:cd27:1440:93a1
 2600:9000:2039:6e00:1a:cd27:1440:93a1
-2600:9000:2039:1200:1a:cd27:1440:93a1
-2600:9000:2039:cc00:1a:cd27:1440:93a1
-2600:9000:2039:2a00:1a:cd27:1440:93a1
-2600:9000:2039:2400:1a:cd27:1440:93a1
-2600:9000:2039:2e00:1a:cd27:1440:93a1
-2600:9000:2039:ae00:1a:cd27:1440:93a1
+
+# With a custom profile
+$ AWS_PROFILE=production aws_public_ips
+52.84.11.159
 ```
 
 ### CLI reference
