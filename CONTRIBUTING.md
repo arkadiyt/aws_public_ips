@@ -12,7 +12,7 @@ Please adhere to the [code of conduct](https://github.com/arkadiyt/aws_public_ip
 
 **Reporting new issues:** Provide a reduced test case with clear reproduction steps.
 
-**Security issues:** If you've found a security vulnerability, please disclose it privately first by direct messaging me on [twitter](https://twitter.com/arkadiyt).
+**Security issues:** If you believe you've found a security issue please disclose it privately first, either through my [vulnerability disclosure program](https://hackerone.com/arkadiyt-projects) on Hackerone or by direct messaging me on [twitter](https://twitter.com/arkadiyt).
 
 ### Proposing a change
 
