@@ -8,7 +8,7 @@ require 'aws_public_ips/version'
   gem.platform    = ::Gem::Platform::RUBY
   gem.version     = ::AwsPublicIps::VERSION
   gem.authors     = ['Arkadiy Tetelman']
-  gem.required_ruby_version = '>= 2.1.0'
+  gem.required_ruby_version = '>= 2.2.0'
   gem.summary     = 'A library/cli to fetch all public IP addresses associated with an AWS account'
   gem.description = gem.summary
   gem.homepage    = 'https://github.com/arkadiyt/aws_public_ips'
@@ -17,19 +17,19 @@ require 'aws_public_ips/version'
   gem.bindir      = 'bin'
   gem.executables = 'aws_public_ips'
 
-  gem.add_dependency('aws-sdk-apigateway', '~> 1.12.0')
+  gem.add_dependency('aws-sdk-apigateway', '~> 1.13.0')
   gem.add_dependency('aws-sdk-cloudfront', '~> 1.4.0')
-  gem.add_dependency('aws-sdk-ec2', '~> 1.36.0')
+  gem.add_dependency('aws-sdk-ec2', '~> 1.40.0')
   gem.add_dependency('aws-sdk-elasticloadbalancing', '~> 1.3.0')
-  gem.add_dependency('aws-sdk-elasticloadbalancingv2', '~> 1.11.0')
-  gem.add_dependency('aws-sdk-elasticsearchservice', '~> 1.6.0')
+  gem.add_dependency('aws-sdk-elasticloadbalancingv2', '~> 1.12.0')
+  gem.add_dependency('aws-sdk-elasticsearchservice', '~> 1.7.0')
   gem.add_dependency('aws-sdk-lightsail', '~> 1.5.0')
   gem.add_dependency('aws-sdk-rds', '~> 1.23.0')
-  gem.add_dependency('aws-sdk-redshift', '~> 1.4.0')
+  gem.add_dependency('aws-sdk-redshift', '~> 1.6.0')
 
   gem.add_development_dependency('bundler-audit', '~> 0.6.0')
   gem.add_development_dependency('coveralls', '~> 0.8.22')
   gem.add_development_dependency('rspec', '~> 3.7.0')
-  gem.add_development_dependency('rubocop', '~> 0.57.2')
+  gem.add_development_dependency('rubocop', '~> 0.58.2')
   gem.add_development_dependency('webmock', '~> 3.4.2')
 end
