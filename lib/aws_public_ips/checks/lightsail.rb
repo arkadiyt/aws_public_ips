@@ -8,6 +8,7 @@ module AwsPublicIps
     module Lightsail
       def self.run
         client = ::Aws::Lightsail::Client.new
+        return [] unless ::AwsPublicIps::Utils.has_service?(client)
 
         # Lightsail instances are always exposed directly, and can also be put behind a load balancer
 

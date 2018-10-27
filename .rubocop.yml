@@ -25,5 +25,8 @@ Metrics/LineLength:
 Metrics/MethodLength:
   Enabled: false
 
+Naming/PredicateName:
+  Enabled: false
+
 Style/Documentation:
   Enabled: false

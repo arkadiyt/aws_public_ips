@@ -8,6 +8,7 @@ module AwsPublicIps
     module Cloudfront
       def self.run
         client = ::Aws::CloudFront::Client.new
+        return [] unless ::AwsPublicIps::Utils.has_service?(client)
 
         # Cloudfront distrubtions are always public, they don't have a concept of VPC
         # No "coming up" problem here like with RDS/Redshift

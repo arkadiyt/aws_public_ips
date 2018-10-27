@@ -8,6 +8,7 @@ module AwsPublicIps
     module Rds
       def self.run
         client = ::Aws::RDS::Client.new
+        return [] unless ::AwsPublicIps::Utils.has_service?(client)
 
         # RDS instances can be launched into VPCs or into Classic mode.
         # In classic mode they are always public.

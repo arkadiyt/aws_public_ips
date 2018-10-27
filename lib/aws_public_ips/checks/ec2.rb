@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
 require 'aws-sdk-ec2'
+require 'aws_public_ips/utils'
 
 module AwsPublicIps
   module Checks
     module Ec2
       def self.run
         client = ::Aws::EC2::Client.new
+        return [] unless ::AwsPublicIps::Utils.has_service?(client)
 
         # Iterate over all EC2 instances. This will include those from EC2, ECS, EKS, Fargate, Batch,
         # Beanstalk, and NAT Instances
