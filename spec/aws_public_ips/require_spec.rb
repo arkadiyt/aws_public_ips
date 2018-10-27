@@ -7,6 +7,7 @@ describe 'File requires' do
     ::Dir["#{dir}/*"].each do |path|
       next unless ::File.directory?(path)
       next unless ::File.exist?("#{path}.rb")
+
       results[path] = ::Dir["#{path}/*.rb"].map { |file| file.chomp('.rb') }
     end
 

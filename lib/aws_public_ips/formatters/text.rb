@@ -22,6 +22,7 @@ module AwsPublicIps
       def format_verbose
         @results.flat_map do |service, hashes|
           next [] if hashes.empty?
+
           ["## #{service}"] + hashes.flat_map do |hash|
             [hash[:id], hash[:hostname]].compact.map do |line|
               "# #{line}"
