@@ -1,3 +1,7 @@
+### 1.0.6 (10/26/2018)
+* Ignore services when they're not available in the requested region
+* Update dependencies
+
 ### 1.0.5 (05/25/2018)
 * Output more details in text formatter when using --verbose
 
