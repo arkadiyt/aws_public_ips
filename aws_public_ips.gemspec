@@ -17,19 +17,19 @@ require 'aws_public_ips/version'
   gem.bindir      = 'bin'
   gem.executables = 'aws_public_ips'
 
-  gem.add_dependency('aws-sdk-apigateway', '~> 1.13.0')
-  gem.add_dependency('aws-sdk-cloudfront', '~> 1.4.0')
-  gem.add_dependency('aws-sdk-ec2', '~> 1.40.0')
-  gem.add_dependency('aws-sdk-elasticloadbalancing', '~> 1.3.0')
-  gem.add_dependency('aws-sdk-elasticloadbalancingv2', '~> 1.12.0')
-  gem.add_dependency('aws-sdk-elasticsearchservice', '~> 1.7.0')
-  gem.add_dependency('aws-sdk-lightsail', '~> 1.5.0')
-  gem.add_dependency('aws-sdk-rds', '~> 1.23.0')
-  gem.add_dependency('aws-sdk-redshift', '~> 1.6.0')
+  gem.add_dependency('aws-sdk-apigateway', '~> 1.21.0')
+  gem.add_dependency('aws-sdk-cloudfront', '~> 1.10.0')
+  gem.add_dependency('aws-sdk-ec2', '~> 1.54.0')
+  gem.add_dependency('aws-sdk-elasticloadbalancing', '~> 1.7.0')
+  gem.add_dependency('aws-sdk-elasticloadbalancingv2', '~> 1.16.0')
+  gem.add_dependency('aws-sdk-elasticsearchservice', '~> 1.14.0')
+  gem.add_dependency('aws-sdk-lightsail', '~> 1.10.0')
+  gem.add_dependency('aws-sdk-rds', '~> 1.35.0')
+  gem.add_dependency('aws-sdk-redshift', '~> 1.13.0')
 
   gem.add_development_dependency('bundler-audit', '~> 0.6.0')
   gem.add_development_dependency('coveralls', '~> 0.8.22')
-  gem.add_development_dependency('rspec', '~> 3.7.0')
-  gem.add_development_dependency('rubocop', '~> 0.58.2')
+  gem.add_development_dependency('rspec', '~> 3.8.0')
+  gem.add_development_dependency('rubocop', '~> 0.60.0')
   gem.add_development_dependency('webmock', '~> 3.4.2')
 end

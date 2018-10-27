@@ -21,6 +21,7 @@ module AwsPublicIps
             client.describe_elasticsearch_domain(domain_name: domain_name.domain_name).map do |domain|
               hostname = domain.domain_status.endpoint
               next unless hostname
+
               {
                 id: domain.domain_status.domain_id,
                 hostname: hostname,

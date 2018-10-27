@@ -19,6 +19,7 @@ module AwsPublicIps
         client.describe_load_balancers.flat_map do |response|
           response.load_balancers.flat_map do |load_balancer|
             next [] unless load_balancer.scheme == 'internet-facing'
+
             {
               id: load_balancer.canonical_hosted_zone_id,
               hostname: load_balancer.dns_name,

@@ -2,7 +2,7 @@
 
 describe ::AwsPublicIps::Checks::Cloudfront do
   it 'should return cloudfront ips' do
-    stub_request(:get, 'https://cloudfront.amazonaws.com/2017-10-30/distribution')
+    stub_request(:get, 'https://cloudfront.amazonaws.com/2018-06-18/distribution')
       .to_return(body: ::IO.read('spec/fixtures/cloudfront.xml'))
 
     stub_dns(

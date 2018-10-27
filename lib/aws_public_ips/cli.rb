@@ -61,6 +61,7 @@ module AwsPublicIps
           services.map(&:downcase!).uniq!
           invalid_services = services - all_services
           raise ::ArgumentError, "Invalid service(s): #{invalid_services.join(',')}" unless invalid_services.empty?
+
           options[:services] = services
         end
 
@@ -69,6 +70,7 @@ module AwsPublicIps
           unless all_formats.include?(fmt)
             raise ::ArgumentError, "Invalid format '#{fmt}'. Valid formats are: #{all_formats.join(',')}"
           end
+
           options[:format] = fmt
         end
 
