@@ -8,6 +8,7 @@ module AwsPublicIps
     module Redshift
       def self.run
         client = ::Aws::Redshift::Client.new
+        return [] unless ::AwsPublicIps::Utils.has_service?(client)
 
         # Redshift clusters can be launched into VPCs or into Classic mode.
         # In classic mode they are always public.

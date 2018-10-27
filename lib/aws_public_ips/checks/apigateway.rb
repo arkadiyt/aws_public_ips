@@ -8,6 +8,7 @@ module AwsPublicIps
     module Apigateway
       def self.run
         client = ::Aws::APIGateway::Client.new
+        return [] unless ::AwsPublicIps::Utils.has_service?(client)
 
         # TODO(arkadiy) https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-private-integration.html
 

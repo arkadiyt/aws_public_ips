@@ -8,6 +8,7 @@ module AwsPublicIps
     module Elasticsearch
       def self.run
         client = ::Aws::ElasticsearchService::Client.new
+        return [] unless ::AwsPublicIps::Utils.has_service?(client)
 
         # ElasticSearch instances can be launched into classic into VPCs. Classic instances are public and have a
         # `domain_status.endpoint` hostname, and VPC instances have a `domain_status.endpoints['vpc']` hostname.

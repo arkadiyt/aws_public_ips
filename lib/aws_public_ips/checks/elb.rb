@@ -8,6 +8,7 @@ module AwsPublicIps
     module Elb
       def self.run
         client = ::Aws::ElasticLoadBalancing::Client.new
+        return [] unless ::AwsPublicIps::Utils.has_service?(client)
 
         # EC2-Classic load balancers are only returned by the 'elasticloadbalancing' API, and
         # EC2-VPC ALBs/NLBs are only returned by the 'elasticloadbalancingv2' API
