@@ -31,6 +31,6 @@ require 'aws_public_ips/version'
   gem.add_development_dependency('bundler-audit', '~> 0.6.0')
   gem.add_development_dependency('coveralls', '~> 0.8.22')
   gem.add_development_dependency('rspec', '~> 3.8.0')
-  gem.add_development_dependency('rubocop', '~> 0.60.0')
+  gem.add_development_dependency('rubocop', '~> 0.63.1')
   gem.add_development_dependency('webmock', '~> 3.4.2')
 end
