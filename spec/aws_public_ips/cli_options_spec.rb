@@ -34,7 +34,7 @@ describe ::AwsPublicIps::CLIOptions do
   it 'should allow all regions to be specified' do
     stub_describe_regions
     options = subject.parse(%w[--region all])
-    expect(options).to satisfy { |o| o[:regions].length == 16 }
+    expect(options).to(satisfy { |o| o[:regions].length == 16 })
   end
 
   it 'should allow tags to be included' do
