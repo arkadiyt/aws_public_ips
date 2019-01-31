@@ -12,6 +12,15 @@ describe ::AwsPublicIps::CLI do
     subject.run(['-s', 'ec2'])
   end
 
+  it 'should run with progress' do
+    stub_describe_regions
+    stub_request(:post, 'https://ec2.us-east-1.amazonaws.com')
+      .to_return(body: ::IO.read('spec/fixtures/ec2.xml'))
+    expect(::STDOUT).to receive(:puts)
+    expect(::STDERR).to receive(:print).at_least(4).times
+    subject.run(['-p', '-s', 'ec2'])
+  end
+
   it 'should rescue exceptions' do
     stub_describe_regions
     expect(subject).to receive(:check_service).and_raise(::StandardError)
