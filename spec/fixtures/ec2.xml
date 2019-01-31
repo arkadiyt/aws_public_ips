@@ -58,6 +58,12 @@
           </blockDeviceMapping>
           <virtualizationType>hvm</virtualizationType>
           <clientToken/>
+          <tagSet>
+            <item>
+              <key>Name</key>
+              <value>foo</value>
+            </item>
+          </tagSet>
           <hypervisor>xen</hypervisor>
           <networkInterfaceSet/>
           <ebsOptimized>false</ebsOptimized>
@@ -124,6 +130,12 @@
           </blockDeviceMapping>
           <virtualizationType>hvm</virtualizationType>
           <clientToken/>
+          <tagSet>
+            <item>
+              <key>name</key>
+              <value>bar</value>
+            </item>
+          </tagSet>
           <hypervisor>xen</hypervisor>
           <networkInterfaceSet>
             <item>

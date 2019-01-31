@@ -10,12 +10,14 @@ describe ::AwsPublicIps::Checks::Ec2 do
         region: 'us-east-1',
         id: 'i-0f22d0af796b3cf3a',
         hostname: 'ec2-54-234-208-236.compute-1.amazonaws.com',
+        name: 'foo',
         ip_addresses: %w[54.234.208.236]
       },
       {
         region: 'us-east-1',
         id: 'i-04ef469b441883eda',
         hostname: 'ec2-18-206-76-65.compute-1.amazonaws.com',
+        name: 'bar',
         ip_addresses: %w[18.206.76.65 2600:1f18:63e0:b400:f50c:59a7:a182:3717]
       },
       {

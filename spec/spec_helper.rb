@@ -28,5 +28,5 @@ def stub_describe_regions
 end
 
 def run_check(subject)
-  subject.run(regions: [::ENV['AWS_REGION']], progress: false)
+  subject.run(regions: [::ENV['AWS_REGION']], tags: ['name'], progress: false)
 end

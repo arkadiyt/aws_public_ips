@@ -33,13 +33,13 @@ module AwsPublicIps
     end
 
     def self.add_tags(result, source, tags)
-      return unless tags
+      return unless tags && source.tags
 
       tags.each do |tag|
         tag_item = source.tags.find { |t| t.key.downcase == tag }
         if tag_item
           tag_key = tag_item.key.downcase
-          result[tag_key] = tag_item.value
+          result[tag_key.to_sym] = tag_item.value
         end
       end
     end
