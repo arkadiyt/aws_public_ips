@@ -31,4 +31,15 @@ describe ::AwsPublicIps::CLI do
     expect(::STDOUT).to receive(:puts)
     expect { subject.run(['--help']) }.to raise_error(::SystemExit)
   end
+
+  it 'should print help on option exceptions' do
+    begin
+      stub_describe_regions
+      expectation = expect { subject.run(['--format', 'blah']) }
+      expectation.to output(/Invalid format/).to_stderr_from_any_process
+      expectation.to output(/Usage: /).to_stderr_from_any_process
+    rescue SystemExit => e
+      expect(e.status).to eq(1)
+    end
+  end
 end

@@ -31,8 +31,8 @@ module AwsPublicIps
 
       output(options[:format], options, results)
     rescue OptionParser::InvalidOption, ArgumentError => ex
-      ::STDOUT.puts ex
-      ::STDOUT.puts cli_options.usage
+      ::STDERR.puts ex
+      ::STDERR.puts cli_options.usage
       ::Process.exit(1)
     rescue ::StandardError, ::Interrupt => ex
       ::STDERR.puts ex.inspect
