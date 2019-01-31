@@ -10,13 +10,15 @@ describe ::AwsPublicIps::Checks::Apigateway do
       'tmtmok31nc.execute-api.us-east-1.amazonaws.com' => %w[54.0.0.3]
     )
 
-    expect(subject.run).to eq([
+    expect(run_check(subject)).to eq([
       {
+        region: 'us-east-1',
         id: 'e83d6nij2j',
         hostname: 'e83d6nij2j.execute-api.us-east-1.amazonaws.com',
         ip_addresses: %w[54.0.0.1 54.0.0.2]
       },
       {
+        region: 'us-east-1',
         id: 'tmtmok31nc',
         hostname: 'tmtmok31nc.execute-api.us-east-1.amazonaws.com',
         ip_addresses: %w[54.0.0.3]

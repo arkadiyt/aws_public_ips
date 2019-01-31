@@ -26,6 +26,7 @@ require 'aws_public_ips/version'
   gem.add_dependency('aws-sdk-lightsail', '~> 1.10.0')
   gem.add_dependency('aws-sdk-rds', '~> 1.35.0')
   gem.add_dependency('aws-sdk-redshift', '~> 1.13.0')
+  gem.add_dependency('tty-spinner', '~>0.9.0 ')
 
   gem.add_development_dependency('bundler-audit', '~> 0.6.0')
   gem.add_development_dependency('coveralls', '~> 0.8.22')

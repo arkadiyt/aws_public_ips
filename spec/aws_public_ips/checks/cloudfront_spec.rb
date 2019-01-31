@@ -9,7 +9,7 @@ describe ::AwsPublicIps::Checks::Cloudfront do
       'd22ycgwdruc4lt.cloudfront.net' => %w[54.0.0.1 54.0.0.2],
       'd1k00qwg2uxphp.cloudfront.net' => %w[54.0.0.3]
     )
-    expect(subject.run).to eq([
+    expect(run_check(subject)).to eq([
       {
         id: 'E1DABYDY46RHFK',
         hostname: 'd22ycgwdruc4lt.cloudfront.net',

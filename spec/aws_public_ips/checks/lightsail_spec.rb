@@ -10,13 +10,15 @@ describe ::AwsPublicIps::Checks::Lightsail do
       'ce551c6f952085b4126e4b523a100eda-232829524.us-east-1.elb.amazonaws.com' => %w[54.88.163.90 52.205.146.152]
     )
 
-    expect(subject.run).to eq([
+    expect(run_check(subject)).to eq([
       {
+        region: 'us-east-1',
         id: 'Amazon_Linux-512MB-Virginia-1',
         hostname: nil,
         ip_addresses: %w[18.206.153.10]
       },
       {
+        region: 'us-east-1',
         id: 'LoadBalancer-Virginia-1',
         hostname: 'ce551c6f952085b4126e4b523a100eda-232829524.us-east-1.elb.amazonaws.com',
         ip_addresses: %w[54.88.163.90 52.205.146.152]
