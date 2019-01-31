@@ -51,7 +51,7 @@ module AwsPublicIps
         p.banner = 'Usage: aws_public_ips [options]'
 
         p.on('-r', '--regions <r1>,<r2>,<r3>', Array, 'List of AWS services to check. Defaults to ' \
-          '$AWS_DEFAULT_REGION or $AWS_REGION.') do |regions|
+          '$AWS_DEFAULT_REGION or $AWS_REGION.  Specify `all` in include all regions.') do |regions|
           regions.map(&:downcase!).uniq!
           (regions << all_regions).flatten!.map(&:downcase!).uniq! if regions.reject! { |r| r == 'all' }
           invalid_regions = regions - all_regions

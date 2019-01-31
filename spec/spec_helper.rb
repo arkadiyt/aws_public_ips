@@ -24,7 +24,7 @@ end
 def stub_describe_regions
   stub_request(:post, 'https://ec2.us-east-1.amazonaws.com/')
     .with(body: /Action=DescribeRegions/)
-    .to_return(status: 200, body: '', headers: {})
+    .to_return(status: 200, body: ::IO.read('spec/fixtures/describe-regions.xml'))
 end
 
 def run_check(subject)
