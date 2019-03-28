@@ -89,7 +89,8 @@ To find the public IPs from all AWS services, the minimal policy needed by your 
         "lightsail:GetInstances",
         "lightsail:GetLoadBalancers",
         "rds:DescribeDBInstances",
-        "redshift:DescribeClusters"
+        "redshift:DescribeClusters",
+        "es:ListDomainNames"
       ],
       "Resource": "*"
     }
