@@ -20,7 +20,13 @@ module AwsPublicIps
               # EC2-Classic instances have a `public_ip_address` and no `network_interfaces`
               # EC2-VPC instances both set, so we uniq the ip addresses
               ip_addresses = [instance.public_ip_address].compact + instance.network_interfaces.flat_map do |interface|
-                public_ip = interface.association ? [interface.association.public_ip].compact : []
+                public_ip = []
+
+                interface.private_ip_addresses.flat_map do |private_ip|
+                  if private_ip.association and private_ip.association.public_ip
+                    public_ip << private_ip.association.public_ip
+                  end
+                end
                 public_ip + interface.ipv_6_addresses.map(&:ipv_6_address)
               end
 

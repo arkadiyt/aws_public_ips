@@ -20,6 +20,10 @@ describe ::AwsPublicIps::Checks::Ec2 do
         id: 'i-03a7b3bc2b4c20742',
         hostname: nil,
         ip_addresses: %w[2600:1f18:60f3:eb00:1c6e:5184:8955:170c]
+      },
+      { id: 'i-01e4cbbe2c7fb98f6',
+        hostname: 'ec2-50-112-85-68.us-west-2.compute.amazonaws.com',
+        ip_addresses: %w[50.112.85.68 54.214.97.117]
       }
     ])
   end
