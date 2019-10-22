@@ -46,6 +46,14 @@ $ AWS_PROFILE=production aws_public_ips
 52.84.11.159
 ```
 
+The gem can also be run from Docker:
+```
+$ docker pull arkadiyt/aws_public_ips
+
+# For credentials, ensure the appropriate environment variables are defined in the host environment:
+$ docker run -e AWS_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN arkadiyt/aws_public_ips
+```
+
 ### CLI reference
 
 ```

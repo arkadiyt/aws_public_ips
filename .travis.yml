@@ -7,7 +7,10 @@ rvm:
   - ruby-2.5
   - ruby-2.6
   - ruby-2.7
+services:
+  - docker
 script:
   - bundle exec bundler-audit
   - bundle exec rubocop
   - bundle exec rspec
+  - docker build .
