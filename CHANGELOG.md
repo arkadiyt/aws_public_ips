@@ -1,3 +1,7 @@
+### 1.0.7 (11/7/2019)
+* Find all addresses when an EC2 instance has multiple ([@breser](https://github.com/breser))
+* Add Docker support
+
 ### 1.0.6 (10/26/2018)
 * Ignore services when they're not available in the requested region
 * Update dependencies
