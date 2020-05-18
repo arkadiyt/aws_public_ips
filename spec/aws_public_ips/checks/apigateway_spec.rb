@@ -10,7 +10,7 @@ describe ::AwsPublicIps::Checks::Apigateway do
       'tmtmok31nc.execute-api.us-east-1.amazonaws.com' => %w[54.0.0.3]
     )
 
-    expect(subject.run).to eq([
+    expect(subject.run(true)).to eq([
       {
         id: 'e83d6nij2j',
         hostname: 'e83d6nij2j.execute-api.us-east-1.amazonaws.com',

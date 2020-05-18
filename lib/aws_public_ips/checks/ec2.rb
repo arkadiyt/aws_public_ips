@@ -6,15 +6,32 @@ require 'aws_public_ips/utils'
 module AwsPublicIps
   module Checks
     module Ec2
-      def self.run
+      def self.run(all)
         client = ::Aws::EC2::Client.new
         return [] unless ::AwsPublicIps::Utils.has_service?(client)
 
+        results = []
+
+        if all
+          results += client.describe_nat_gateways.flat_map do |response|
+            response.nat_gateways.flat_map do |gateway|
+              ip_addresses = gateway.nat_gateway_addresses.map { |addresses| addresses.public_ip }
+
+              # Don't return an entry if all ips were private
+              next [] if ip_addresses.empty?
+
+              {
+                id: gateway.nat_gateway_id,
+                hostname: nil,
+                ip_addresses: ip_addresses.uniq
+              }
+            end
+          end
+        end
+
         # Iterate over all EC2 instances. This will include those from EC2, ECS, EKS, Fargate, Batch,
         # Beanstalk, and NAT Instances
-        # It will not include NAT Gateways (IPv4) or Egress Only Internet Gateways (IPv6), but they do not allow
-        # ingress traffic so we skip them anyway
-        client.describe_instances.flat_map do |response|
+        results += client.describe_instances.flat_map do |response|
           response.reservations.flat_map do |reservation|
             reservation.instances.flat_map do |instance|
               # EC2-Classic instances have a `public_ip_address` and no `network_interfaces`
@@ -43,6 +60,8 @@ module AwsPublicIps
             end
           end
         end
+
+        results
       end
     end
   end

@@ -10,7 +10,7 @@ describe ::AwsPublicIps::Checks::Elb do
       'ipv6.classic-272004174.us-east-1.elb.amazonaws.com' => %w[2600:1f18:63e0:b401:b952:5715:d981:2776]
     )
 
-    expect(subject.run).to eq([
+    expect(subject.run(true)).to eq([
       {
         id: 'Z35SXDOTRQ7X7K',
         hostname: 'classic-272004174.us-east-1.elb.amazonaws.com',

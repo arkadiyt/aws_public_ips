@@ -18,7 +18,6 @@ module AwsPublicIps
     # Services that don't need to be supported:
     # S3 - all s3 buckets resolve to the same ip addresses
     # SQS - there's a single AWS-owned domain per region (i.e. sqs.us-east-1.amazonaws.com/<account_id>/<queue_name>)
-    # NAT Gateways - these do not allow ingress traffic
     # ElastiCache - all elasticache instances are private. You can make one public by using a NAT instance with an EIP:
     # https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/accessing-elasticache.html#access-from-outside-aws
     # but NAT instances are EC2 machines, so this will be caught by the EC2 check.
@@ -74,6 +73,10 @@ module AwsPublicIps
           options[:format] = fmt
         end
 
+        parser.on('-a', '--all', "Include all services (even those that don't allow ingress") do
+          options[:all] = true
+        end
+
         parser.on('-v', '--[no-]verbose', 'Enable debug/trace output') do |verbose|
           options[:verbose] = verbose
         end
@@ -93,9 +96,9 @@ module AwsPublicIps
       options
     end
 
-    def check_service(service)
+    def check_service(service, all)
       require "aws_public_ips/checks/#{service}.rb"
-      ::AwsPublicIps::Checks.const_get(service.capitalize).run
+      ::AwsPublicIps::Checks.const_get(service.capitalize).run(all)
     end
 
     def output(formatter, options, results)
@@ -110,7 +113,7 @@ module AwsPublicIps
       return unless options
 
       results = options[:services].map do |service|
-        [service.to_sym, check_service(service)]
+        [service.to_sym, check_service(service, options[:all])]
       end.to_h
 
       output(options[:format], options, results)

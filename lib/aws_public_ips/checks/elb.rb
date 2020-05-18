@@ -6,7 +6,7 @@ require 'aws_public_ips/utils'
 module AwsPublicIps
   module Checks
     module Elb
-      def self.run
+      def self.run(all)
         client = ::Aws::ElasticLoadBalancing::Client.new
         return [] unless ::AwsPublicIps::Utils.has_service?(client)
 
