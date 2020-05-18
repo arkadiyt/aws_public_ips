@@ -5,7 +5,7 @@ describe ::AwsPublicIps::Checks::Redshift do
     stub_request(:post, 'https://redshift.us-east-1.amazonaws.com')
       .to_return(body: ::IO.read('spec/fixtures/redshift-classic-public.xml'))
 
-    expect(subject.run).to eq([
+    expect(subject.run(true)).to eq([
       {
         id: 'classic',
         hostname: 'classic.csorkyt5dk7h.us-east-1.redshift.amazonaws.com',
@@ -21,7 +21,7 @@ describe ::AwsPublicIps::Checks::Redshift do
     stub_dns(
       'vpc-public-2.csorkyt5dk7h.us-east-1.redshift.amazonaws.com' => %w[54.156.7.130]
     )
-    expect(subject.run).to eq([
+    expect(subject.run(true)).to eq([
       {
         id: 'vpc-public-2',
         hostname: 'vpc-public-2.csorkyt5dk7h.us-east-1.redshift.amazonaws.com',
@@ -34,12 +34,12 @@ describe ::AwsPublicIps::Checks::Redshift do
     stub_request(:post, 'https://redshift.us-east-1.amazonaws.com')
       .to_return(body: ::IO.read('spec/fixtures/redshift-vpc-private.xml'))
 
-    expect(subject.run).to eq([])
+    expect(subject.run(true)).to eq([])
   end
 
   it 'should handle clusters with a nil endpoint' do
     stub_request(:post, 'https://redshift.us-east-1.amazonaws.com')
       .to_return(body: ::IO.read('spec/fixtures/redshift-empty-endpoint.xml'))
-    expect { subject.run }.to raise_error(StandardError, /has a nil endpoint/)
+    expect { subject.run (true)}.to raise_error(StandardError, /has a nil endpoint/)
   end
 end

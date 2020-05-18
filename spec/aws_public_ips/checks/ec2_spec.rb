@@ -5,7 +5,7 @@ describe ::AwsPublicIps::Checks::Ec2 do
     stub_request(:post, 'https://ec2.us-east-1.amazonaws.com')
       .to_return(body: ::IO.read('spec/fixtures/ec2.xml'))
 
-    expect(subject.run).to eq([
+    expect(subject.run(true)).to eq([
       {
         id: 'i-0f22d0af796b3cf3a',
         hostname: 'ec2-54-234-208-236.compute-1.amazonaws.com',
@@ -32,6 +32,6 @@ describe ::AwsPublicIps::Checks::Ec2 do
   it 'should not return an entry when there are no public ips' do
     stub_request(:post, 'https://ec2.us-east-1.amazonaws.com')
       .to_return(body: ::IO.read('spec/fixtures/ec2-private.xml'))
-    expect(subject.run).to eq([])
+    expect(subject.run(true)).to eq([])
   end
 end

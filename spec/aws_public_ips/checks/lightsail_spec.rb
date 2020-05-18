@@ -10,7 +10,7 @@ describe ::AwsPublicIps::Checks::Lightsail do
       'ce551c6f952085b4126e4b523a100eda-232829524.us-east-1.elb.amazonaws.com' => %w[54.88.163.90 52.205.146.152]
     )
 
-    expect(subject.run).to eq([
+    expect(subject.run(true)).to eq([
       {
         id: 'Amazon_Linux-512MB-Virginia-1',
         hostname: nil,

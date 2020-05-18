@@ -10,7 +10,7 @@ describe ::AwsPublicIps::Checks::Elbv2 do
       'alb-vpc-228877692.us-east-1.elb.amazonaws.com' => %w[54.0.0.2 2600:1f18:63e0:b401:b952:5715:d981:2776]
     )
 
-    expect(subject.run).to eq([
+    expect(subject.run(true)).to eq([
       {
         id: 'Z26RNL4JYFTOTI',
         hostname: 'nlb-vpc-d243d0acc9151631.elb.us-east-1.amazonaws.com',
