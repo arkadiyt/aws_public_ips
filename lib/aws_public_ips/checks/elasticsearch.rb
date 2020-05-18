@@ -6,7 +6,7 @@ require 'aws_public_ips/utils'
 module AwsPublicIps
   module Checks
     module Elasticsearch
-      def self.run
+      def self.run(all)
         client = ::Aws::ElasticsearchService::Client.new
         return [] unless ::AwsPublicIps::Utils.has_service?(client)
 

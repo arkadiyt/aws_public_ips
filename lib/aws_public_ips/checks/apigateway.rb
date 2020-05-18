@@ -6,7 +6,7 @@ require 'aws_public_ips/utils'
 module AwsPublicIps
   module Checks
     module Apigateway
-      def self.run
+      def self.run(all)
         client = ::Aws::APIGateway::Client.new
         return [] unless ::AwsPublicIps::Utils.has_service?(client)
 

@@ -6,7 +6,7 @@ require 'aws_public_ips/utils'
 module AwsPublicIps
   module Checks
     module Redshift
-      def self.run
+      def self.run(all)
         client = ::Aws::Redshift::Client.new
         return [] unless ::AwsPublicIps::Utils.has_service?(client)
 
