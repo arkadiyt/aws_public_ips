@@ -1,7 +1,11 @@
-### 1.0.7
+### 1.0.8
 * Display progress while running by specifying `--progress`
 * Include tag data in ec2 records by adding `--include_tags name`
 * Multi-region support.  Defaults to the region specified by AWS_DEFAULT_REGION or AWS_REGION.  Many regions can be specified.  `all` will include all regions.
+
+### 1.0.7 (11/7/2019)
+* Find all addresses when an EC2 instance has multiple ([@breser](https://github.com/breser))
+* Add Docker support
 
 ### 1.0.6 (10/26/2018)
 * Ignore services when they're not available in the requested region

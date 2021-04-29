@@ -1,4 +1,4 @@
-# aws_public_ips  [![Gem](https://img.shields.io/gem/v/aws_public_ips.svg)](https://rubygems.org/gems/aws_public_ips) [![TravisCI](https://travis-ci.org/arkadiyt/aws_public_ips.svg?branch=master)](https://travis-ci.org/arkadiyt/aws_public_ips/) [![Coverage Status](https://coveralls.io/repos/github/arkadiyt/aws_public_ips/badge.svg?branch=master)](https://coveralls.io/github/arkadiyt/aws_public_ips?branch=master) [![License](https://img.shields.io/github/license/arkadiyt/aws_public_ips.svg)](https://github.com/arkadiyt/aws_public_ips/blob/master/LICENSE.md)
+# aws_public_ips  [![Gem](https://img.shields.io/gem/v/aws_public_ips.svg)](https://rubygems.org/gems/aws_public_ips) [![TravisCI](https://travis-ci.com/arkadiyt/aws_public_ips.svg?branch=master)](https://travis-ci.com/arkadiyt/aws_public_ips/) [![Coverage Status](https://coveralls.io/repos/github/arkadiyt/aws_public_ips/badge.svg?branch=master)](https://coveralls.io/github/arkadiyt/aws_public_ips?branch=master) [![License](https://img.shields.io/github/license/arkadiyt/aws_public_ips.svg)](https://github.com/arkadiyt/aws_public_ips/blob/master/LICENSE.md)
 
 ## Table of Contents
 - [What's it for](https://github.com/arkadiyt/aws_public_ips#whats-it-for)
@@ -46,6 +46,14 @@ $ AWS_PROFILE=production aws_public_ips
 52.84.11.159
 ```
 
+The gem can also be run from Docker:
+```
+$ docker pull arkadiyt/aws_public_ips
+
+# For credentials, ensure the appropriate environment variables are defined in the host environment:
+$ docker run -e AWS_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN arkadiyt/aws_public_ips
+```
+
 ### CLI reference
 
 ```
@@ -89,7 +97,8 @@ To find the public IPs from all AWS services, the minimal policy needed by your 
         "lightsail:GetInstances",
         "lightsail:GetLoadBalancers",
         "rds:DescribeDBInstances",
-        "redshift:DescribeClusters"
+        "redshift:DescribeClusters",
+        "es:ListDomainNames"
       ],
       "Resource": "*"
     }
