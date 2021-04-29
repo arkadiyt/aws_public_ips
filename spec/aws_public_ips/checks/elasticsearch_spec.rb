@@ -13,8 +13,9 @@ describe ::AwsPublicIps::Checks::Elasticsearch do
       'search-classic-fd5cbkkjuuiudho2lrwmsjp6rm.us-east-1.es.amazonaws.com' => %w[54.0.0.1]
     )
 
-    expect(subject.run).to eq([
+    expect(run_check(subject)).to eq([
       {
+        region: 'us-east-1',
         id: '154967844790/classic',
         hostname: 'search-classic-fd5cbkkjuuiudho2lrwmsjp6rm.us-east-1.es.amazonaws.com',
         ip_addresses: %w[54.0.0.1]

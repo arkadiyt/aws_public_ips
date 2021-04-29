@@ -1,3 +1,8 @@
+### 1.0.8
+* Display progress while running by specifying `--progress`
+* Include tag data in ec2 records by adding `--include_tags name`
+* Multi-region support.  Defaults to the region specified by AWS_DEFAULT_REGION or AWS_REGION.  Many regions can be specified.  `all` will include all regions.
+
 ### 1.0.7 (11/7/2019)
 * Find all addresses when an EC2 instance has multiple ([@breser](https://github.com/breser))
 * Add Docker support
@@ -7,11 +12,11 @@
 * Update dependencies
 
 ### 1.0.5 (05/25/2018)
-* Output more details in text formatter when using --verbose
+* Output more details in text formatter when using `--verbose`
 
 ### 1.0.4 (05/20/2018)
 * Handle RDS and Redshift instances which are in the process of coming up/down
-* Add --help, --version commands to CLI
+* Add `--help`, `--version` commands to CLI
 * Improve CLI error output
 * Fix issue where using the EC2 check with the JSON formatter could output empty entries
 * Fix issue with RDS check where the endpoint hostname was not being counted as a public IP

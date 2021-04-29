@@ -1,5 +1,7 @@
 *.swp
 .bundle
+.idea
 coverage/
 Gemfile.lock
 vendor/bundle
+aws_public_ips-*.gem
